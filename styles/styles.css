@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+body{
+    font-size: 12rem;
+}
+
+main {
+    padding: 0 50px;
+}
+
+nav{
+    margin-top: 8px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+header {
+    margin-top: 40px;
+    padding: 0 50px;
+}
+
+#about img {
+    width: 50%;
+}
+
+a{
+    text-decoration: none;
+    color: black ;
+    padding-right: 20px;
+}
+
+a:hover {
+    color: orange;
+}
+
+.name {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+ul {
+    font-size: 4.5rem;
+}
+
+table {
+    font-size: 11rem;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1.8px solid black;
+    width: 60%;
+}
+
+#price {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+th, td {
+    padding:  12px;
+    border: 1.8px solid black;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 50px 0 50px 50px;
+    font-size: 5rem;
+}
