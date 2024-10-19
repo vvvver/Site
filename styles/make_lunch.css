@@ -117,6 +117,87 @@ footer {
   margin-top: auto;
 }
 
+.create_order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 5rem 0;
+}
+
+.block_create_order {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.3rem;
+  margin-top: 4rem;
+}
+
+.order_and_data {
+  font-size: 2.7rem;
+}
+
+.info {
+  width: 45%;
+  height: auto;
+}
+
+label {
+  display: block;
+  margin-top: 2rem;
+}
+
+label p {
+  margin-bottom: 1rem;
+}
+
+input, select {
+  font-size: 2.1rem;
+  width: 80%;
+  height: 5rem;
+}
+
+textarea {
+  font-size: 2.1rem;
+  width: 80%;
+  height: 12rem;
+}
+
+.checkbox_radio {
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+}
+
+.checkbox_radio input{
+  margin-right: 1rem;
+  width: 5%;
+  height: 2rem;
+}
+
+.checkbox_radio p {
+  margin-bottom: 0;
+}
+
+em {
+  font-size: 2.1rem;
+  font-style: italic;
+}
+
+.form_button {
+  border: black solid 1.7px;
+  border-radius: 0;
+  background-color: white;
+  font-size: 2.1rem;
+  text-align: center;
+  padding: 0.9rem 2.7rem;
+}
+
+.order_buttons {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 800px ) {
   .dish {
     grid-template-columns: 1fr;
@@ -139,3 +220,4 @@ footer {
     font-size: calc(3rem + 4px);
   }
 }
+
