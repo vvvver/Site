@@ -18,7 +18,6 @@ let price = {
   }
 }
 
-
 const addInOrder = () => {
   for(const elem of document.getElementsByClassName('dish_elem')) {
     elem.addEventListener('click', () => {
@@ -34,7 +33,8 @@ const addInOrder = () => {
       
       document.getElementById(`order_${type_of_food}_value`).value = arr[2].textContent;
       document.getElementById('order_price_value').value = price.summ();
-  
+
+      bin[type_of_food] = '1';
     })
   };
 }
@@ -103,4 +103,11 @@ for(const elem of document.getElementsByClassName('filter_button')) {
   })
 }
 
+export let bin = {
+  soup: '',
+  main_dish: '',  
+  salad_starter: '',
+  drink: '',
+  dessert: ''
+}
 

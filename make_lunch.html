@@ -20,6 +20,90 @@
     </nav>
   </header>
   <main>
+    <div id="notific">
+      <p id="notific_text">gg</p>
+      <button id="notific_button">Окей</button>
+    </div>
+    <h2 class="options_title">Доступные для заказа комбо</h2>
+    <div class="options">
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/soup.png" alt="soup">
+          <p>Суп</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/salad.png" alt="salad">
+          <p>Салат</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/soup.png" alt="soup">
+          <p>Суп</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/soup.png" alt="soup">
+          <p>Суп</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/salad.png" alt="salad">
+          <p>Салат</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/salad.png" alt="salad">
+          <p>Салат</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/main.png" alt="main">
+          <p>Главное блюдо</p>
+        </div>
+        <div class="lunch_dish">
+          <img src="./icons/drink.png" alt="drink">
+          <p>Напиток</p>
+        </div>
+      </div>
+      <div class="lunch_options">
+        <div class="lunch_dish">
+          <img src="./icons/desert.png" alt="drink">
+          <p>Десерт</p>
+          <p class="lunch_dish_text">(Можно добавить к любому заказу)</p>
+        </div>
+      </div>
+    </div>
     <section>
       <h2>Выберите суп</h2>
       <div>
@@ -165,7 +249,7 @@
             </label>
             <div class="order_buttons">
               <button type="reset" class="form_button">Сбросить</button>
-              <button type="submit" class="form_button">Отправить</button>
+              <button type="submit" class="form_button" id="submit_button">Отправить</button>
             </div>
           </div>
         </div>
@@ -176,5 +260,6 @@
     <p>Позвонить нам +7-000-000-00-00</p>
   </footer>
   <script type="module" src="make_lunch.js"></script>
+  <script type="module" src="notifications.js"></script>
 </body>
 </html>
