@@ -1,4 +1,6 @@
-import menu from "./data.js";
+import loadDishes from "./load_dishes.js";
+
+let menu = await loadDishes();
 
 menu.sort((a, b) => a.name > b.name ? 1 : -1);
 
@@ -8,13 +10,13 @@ const order_price = document.getElementById('order_price');
 const no_order = document.getElementById('no_dishes');
 
 let price = {
-  soup: 0,
-  main_dish: 0,
-  salad_starter: 0,
-  drink: 0,
-  dessert: 0,
+  "soup": 0,
+  "main-course": 0,
+  "salad": 0,
+  "drink": 0,
+  "dessert": 0,
   summ: function () {
-    return this.soup + this.main_dish + this.salad_starter + this.drink +this.dessert
+    return this["soup"] + this["main-course"] + this["salad"] + this["drink"] +this["dessert"]
   }
 }
 
@@ -27,7 +29,7 @@ const addInOrder = () => {
       const arr = Array.from(elem.childNodes);
       const type_of_food = elem.dataset.dish;
   
-      price[type_of_food] = Number(Array.from(arr[1].textContent).slice(0, -2).join(''));
+      price[type_of_food] = Number(Array.from(arr[1].textContent).slice(0, -1).join(''));
       document.getElementById(`no_${type_of_food}`).innerHTML = arr[2].textContent + " " + price[type_of_food] + "&#8381";
       order_price.innerHTML = price.summ() + "&#8381";
       
@@ -46,13 +48,13 @@ function rend (paramMenu=menu, paramCategory='') {
     dishElem.dataset.dish = paramMenu[i].category;
 
     let img = document.createElement('img');
-    img.src = paramMenu[i].img;
+    img.src = paramMenu[i].image;
     img.alt = paramMenu[i].category;
     dishElem.appendChild(img);
 
     let price = document.createElement('p');
     price.classList.add('price');
-    price.innerHTML = paramMenu[i].price;
+    price.innerHTML = paramMenu[i].price + "&#8381";
     dishElem.appendChild(price);
 
     let name = document.createElement('p');
@@ -62,7 +64,7 @@ function rend (paramMenu=menu, paramCategory='') {
 
     let weight = document.createElement('p');
     weight.classList.add('weight');
-    weight.innerHTML = paramMenu[i].weight;
+    weight.innerHTML = paramMenu[i].count;
     dishElem.appendChild(weight);
 
     let button = document.createElement('button');
@@ -104,10 +106,10 @@ for(const elem of document.getElementsByClassName('filter_button')) {
 }
 
 export let bin = {
-  soup: '',
-  main_dish: '',  
-  salad_starter: '',
-  drink: '',
-  dessert: ''
+  "soup": '',
+  "main-course": '',  
+  "salad": '',
+  "drink": '',
+  "dessert": ''
 }
 

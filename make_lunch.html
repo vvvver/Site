@@ -15,13 +15,14 @@
     <nav>
         <a href="./index.html">О нас</a>
         <a class="active" href="./make_lunch.html">Собрать ланч</a>
+        <a href="./order.html">Оформить заказ</a>
         <a href="#popular">Заказы</a>
         <a href="#contacts">Контакты</a>
     </nav>
   </header>
   <main>
     <div id="notific">
-      <p id="notific_text">gg</p>
+      <p id="notific_text"></p>
       <button id="notific_button">Окей</button>
     </div>
     <h2 class="options_title">Доступные для заказа комбо</h2>
@@ -120,7 +121,7 @@
         <button class="filter_button" data-kind="meat" data-active="false">мясное</button>
         <button class="filter_button" data-kind="veg" data-active="false">вегетарианское</button>
       </div>
-      <div class="dish" id="dish_main_dish">
+      <div class="dish" id="dish_main-course">
       </div>
     </section>
     <section>
@@ -130,7 +131,7 @@
         <button class="filter_button" data-kind="meat" data-active="false">мясное</button>
         <button class="filter_button" data-kind="veg" data-active="false">вегетарианское</button>
       </div>
-      <div class="dish" id="dish_salad_starter">
+      <div class="dish" id="dish_salad">
       </div>
     </section>
     <section>
@@ -170,15 +171,15 @@
               <label for="main_dish">
                 <div>
                   <b><p>Главное блюдо</p></b>
-                  <p id="no_main_dish">Блюдо не выбрано</p>
-                  <input id="order_main_dish_value" type="hidden" name="order_main_dish" value="">
+                  <p id="no_main-course">Блюдо не выбрано</p>
+                  <input id="order_main-course_value" type="hidden" name="order_main-course" value="">
                 </div>
               </label>
               <label for="salad_starter">
                 <div>
                   <b><p>Салат/стартер</p></b>
-                  <p id="no_salad_starter">Блюдо не выбрано</p>
-                  <input id="order_salad_starter_value" type="hidden" name="order_salad_starter" value="">
+                  <p id="no_salad">Блюдо не выбрано</p>
+                  <input id="order_salad_value" type="hidden" name="order_salad" value="">
                 </div>
               </label>
               <label for="drink">
@@ -261,5 +262,6 @@
   </footer>
   <script type="module" src="make_lunch.js"></script>
   <script type="module" src="notifications.js"></script>
+  <script type="module" src="load_dishes.js"></script>
 </body>
 </html>
