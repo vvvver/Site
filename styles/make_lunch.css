@@ -288,6 +288,26 @@ em {
   font-size: 2.5rem;
 }
 
+#make_order {
+  position:sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(186, 184, 184, 0.6);
+  padding: 1rem 4rem;
+  align-items: center;
+  display: none;
+}
+
+#make_order_button {
+  background-color:rgb(217, 211, 203, 0.4);
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0;
+  font-size: 2.5rem;
+}
+
 @media screen and (max-width: 800px ) {
   .dish {
     grid-template-columns: 1fr;

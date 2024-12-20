@@ -1,13 +1,7 @@
-import loadDishes from "./load_dishes.js";
-
+import { loadDishes }  from "./load_dishes.js";
 let menu = await loadDishes();
 
 menu.sort((a, b) => a.name > b.name ? 1 : -1);
-
-const orders = document.getElementById('orders');
-orders.hidden = true;
-const order_price = document.getElementById('order_price');
-const no_order = document.getElementById('no_dishes');
 
 let price = {
   "soup": 0,
@@ -20,23 +14,80 @@ let price = {
   }
 }
 
+function makeOrder () {
+  if (price["soup"] != 0) {
+    if (price["main-course"] != 0) {
+      if (price["salad"] != 0) {
+        if (price["drink"] != 0) {
+          make_order_button.disabled = false;
+        }
+        else {
+          make_order_button.disabled = true;
+        }
+      }
+      else {
+        if(price["drink"] != 0) {
+          make_order_button.disabled = false;
+        }
+        else {
+          make_order_button.disabled = true;
+        }
+      }
+    }
+    else {
+      if(price["salad"] != 0) {
+        if (price["drink"] != 0) {
+          make_order_button.removeAttribute("disabled");
+        }
+        else {
+          make_order_button.setAttribute("disabled", "");
+        }
+      }
+      else {
+        make_order_button.setAttribute("disabled", "");
+      }
+    }
+  }
+      
+  if (price["main-course"] != 0) {
+    if (price["salad"] != 0) {
+      if (price["drink"] != 0) {
+        make_order_button.removeAttribute("disabled");
+      }
+      else {
+        make_order_button.setAttribute("disabled", "");
+      }
+    }
+    else {
+      if (price["drink"] != 0) {
+        make_order_button.removeAttribute("disabled");
+      }
+      else {
+        make_order_button.setAttribute("disabled", "");
+      }
+    }
+  }
+  
+}
+
+
+let i = 1;
+const make_order_button = document.getElementById('make_order_button');
 const addInOrder = () => {
   for(const elem of document.getElementsByClassName('dish_elem')) {
     elem.addEventListener('click', () => {
-      no_order.hidden = true;
-      orders.hidden = false;
-  
       const arr = Array.from(elem.childNodes);
       const type_of_food = elem.dataset.dish;
-  
       price[type_of_food] = Number(Array.from(arr[1].textContent).slice(0, -1).join(''));
-      document.getElementById(`no_${type_of_food}`).innerHTML = arr[2].textContent + " " + price[type_of_food] + "&#8381";
-      order_price.innerHTML = price.summ() + "&#8381";
-      
-      document.getElementById(`order_${type_of_food}_value`).value = arr[2].textContent;
-      document.getElementById('order_price_value').value = price.summ();
-
-      bin[type_of_food] = '1';
+      document.getElementById('make_order_price').innerHTML = "Итого: " + price.summ() + "&#8381";
+      for (let el of menu) {
+        if (el.name == arr[2].textContent) {
+          localStorage.setItem(`${el.category}`, el.id); 
+          i++;
+        }
+      }
+      document.getElementById('make_order').style.display = 'flex';
+      makeOrder();
     })
   };
 }
@@ -105,11 +156,20 @@ for(const elem of document.getElementsByClassName('filter_button')) {
   })
 }
 
-export let bin = {
-  "soup": '',
-  "main-course": '',  
-  "salad": '',
-  "drink": '',
-  "dessert": ''
+if (localStorage.length != 0) {
+  document.getElementById('make_order').style.display = 'flex';
+  for (let el of menu) {
+    let dish = localStorage.getItem(el.category);
+    if (dish == el.id) {
+    let type_of_food = el.category;
+    price[type_of_food] = el.price;
+    }
+    document.getElementById('make_order_price').innerHTML = "Итого: " + price.summ() + "&#8381";
+    
+  }
 }
 
+makeOrder();
+
+
+// 50a0367a-50c3-4b25-8fe0-966d4442fdd9

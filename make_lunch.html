@@ -21,10 +21,6 @@
     </nav>
   </header>
   <main>
-    <div id="notific">
-      <p id="notific_text"></p>
-      <button id="notific_button">Окей</button>
-    </div>
     <h2 class="options_title">Доступные для заказа комбо</h2>
     <div class="options">
       <div class="lunch_options">
@@ -147,121 +143,23 @@
       <h2>Выберите десерт</h2>
       <div>
         <button class="filter_button" data-kind="small" data-active="false">маленькая порция</button>
-        <button class="filter_button" data-kind="average" data-active="false">средняя порция</button>
-        <button class="filter_button" data-kind="big" data-active="false">большая порция</button>
+        <button class="filter_button" data-kind="medium" data-active="false">средняя порция</button>
+        <button class="filter_button" data-kind="large" data-active="false">большая порция</button>
       </div>
       <div class="dish" id="dish_dessert">
       </div>
     </section>
-    <form action="https://httpbin.org/post" method="post">
-      <div class="create_order">
-        <h2>Сделать заказ</h2>
-        <div class="block_create_order">
-          <div class="info">
-            <p class="order_and_data">Ваш заказ</p>
-            <b><p id="no_dishes" class="no_dishes">Ничего не выбрано</p></b>
-            <div id="orders">
-              <label for="soup">
-                <div>
-                  <b><p>Суп</p></b>
-                  <p id="no_soup">Блюдо не выбрано</p>
-                  <input id="order_soup_value" type="hidden" name="order_soup" value="">
-                </div>
-              </label>
-              <label for="main_dish">
-                <div>
-                  <b><p>Главное блюдо</p></b>
-                  <p id="no_main-course">Блюдо не выбрано</p>
-                  <input id="order_main-course_value" type="hidden" name="order_main-course" value="">
-                </div>
-              </label>
-              <label for="salad_starter">
-                <div>
-                  <b><p>Салат/стартер</p></b>
-                  <p id="no_salad">Блюдо не выбрано</p>
-                  <input id="order_salad_value" type="hidden" name="order_salad" value="">
-                </div>
-              </label>
-              <label for="drink">
-                <div>
-                  <b><p>Напиток</p></b>
-                  <p id="no_drink">Напиток не выбран</p>
-                  <input id="order_drink_value" type="hidden" name="order_drink" value="">
-                </div>
-              </label>
-              <label for="dessert">
-                <div>
-                  <b><p>Десерт</p></b>
-                  <p id="no_dessert">Десерт не выбран</p>
-                  <input id="order_dessert_value" type="hidden" name="order_dessert" value="">
-                </div>
-              </label>
-              <label for="order_price_value">
-                <div>
-                  <b><p>Стоимость заказа</p></b>
-                  <p id="order_price"></p>
-                  <input id="order_price_value" type="hidden" name="order_price" value="">
-                </div>
-              </label>
-            </div>
-            <label for="comments">
-              <p class="comments">Комментарии к заказу</p>
-              <textarea name="comments" id="comments"></textarea>
-            </label>
-          </div>
-          <div class="info">
-            <p class="order_and_data">Ваши данные</p>
-            <label for="name">
-              <p>Имя</p>
-              <input type="text" id="name" name="name" required>
-            </label>
-            <label for="email">
-              <p>Email</p>
-              <input type="email" id="email" name="email" required>
-            </label>
-            <label class="checkbox_radio" for="information">
-              <input type="checkbox" id="information" name="information" checked>
-              <p>Получать информацию о скидках и акциях</p>
-            </label>
-            <label for="phone">
-              <p>Номер телефона </p>
-              <input type="tel" id="phone" name="phone" required>
-            </label>
-            <label for="address">
-              <p>Адрес доставки</p>
-              <input type="text" id="address" name="address" required>
-              <p><em>Доставка осуществляется только по Москве</em></p>
-            </label>
-            <div class="time">
-              <p>Время доставки:</p>
-              <label class="checkbox_radio" for="radio_1">
-                <input name="time" type="radio" id="radio_1" required>
-                <p>Как можно скорее</p>
-              </label>
-              <label class="checkbox_radio" for="radio_2">
-                <input name="time" type="radio" id="radio_2" required>
-                <p>К указанному времени</p>
-              </label>
-            </div>
-            <label for="time_delivery">
-              <p>Укажите время доставки</p>
-              <input type="time" name="time_delivery" id="time_delivery" min="07:00" max="23:00" step="300" required>
-              <p><em>Доступное время доставки с 7:00 до 23:00</em></p>
-            </label>
-            <div class="order_buttons">
-              <button type="reset" class="form_button">Сбросить</button>
-              <button type="submit" class="form_button" id="submit_button">Отправить</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
     </main>
+    <div id="make_order">
+      <p id="make_order_price"></p>
+      <a href="./order.html"><button id="make_order_button" disabled>Перейти к оформлению</button></a>
+    </div>
   <footer id="contacts">
     <p>Позвонить нам +7-000-000-00-00</p>
   </footer>
   <script type="module" src="make_lunch.js"></script>
   <script type="module" src="notifications.js"></script>
   <script type="module" src="load_dishes.js"></script>
+  <script type="module" src="make_order.js"></script>
 </body>
 </html>
