@@ -1,5 +1,5 @@
 import { loadDishes }  from "./load_dishes.js";
-let menu = await loadDishes();
+export let menu = await loadDishes();
 
 menu.sort((a, b) => a.name > b.name ? 1 : -1);
 

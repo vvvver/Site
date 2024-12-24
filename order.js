@@ -1,6 +1,6 @@
 import { loadDishes, loadServer}  from "./load_dishes.js";
 import { notificFoo } from "./notifications.js";
-let menu = await loadDishes();
+export let menu = await loadDishes();
 
 for (let elem of menu) {
   let dish = localStorage.getItem(elem.category);
@@ -127,5 +127,5 @@ submit_button.addEventListener('click', async (e) => {
   }
   const ans = await loadServer(data)
   console.log(ans);
-
+  location.reload();
 })
