@@ -64,6 +64,11 @@ th, td {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .modalClose img {
@@ -79,15 +84,6 @@ th, td {
   margin: 2rem;
   font-size: 2rem;
 }
-
-/* .modalClose {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-} */
 
 .mod_but {
   display: flex;
@@ -170,4 +166,9 @@ th, td {
   border: 2px solid grey;
   font-size: 1.5rem;
 }
+
+.modalWindow {
+  position: relative;
+}
+
 

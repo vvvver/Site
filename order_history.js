@@ -83,6 +83,7 @@ for (let el of orders) {
   i++;
 }
 
+
 // кнопка Удалить
 const delOrder = document.getElementsByClassName('del_order');
 const modalBackDel = document.getElementsByClassName('modalBack')[0];
